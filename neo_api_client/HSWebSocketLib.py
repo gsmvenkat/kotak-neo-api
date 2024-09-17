@@ -1200,7 +1200,9 @@ class HSWebSocket:
             channelnum = 1
         # scrips = None
         # channelnum = req_json[Keys.get("CHANNEL_NUM")]
-        if req_type == ReqTypeValues.get("CONNECTION"):
+        if req_type == 'hb':
+            req = {'type': 'hb'}
+        elif req_type == ReqTypeValues.get("CONNECTION"):
             if Keys.get("USER_ID") in req_json:
                 user = req_json[Keys.get("USER_ID")]
                 req = prepare_connection_request(user)
